@@ -22,9 +22,82 @@
 // var thirditem = document.querySelector('.list-group-item:nth-child(3)');
 // thirditem.style.color = 'white';
 //QueryselectorAll
-  var li = document.querySelectorAll('li');
-  li[1].style.color ='green';
-  var odd = document.querySelectorAll('li:nth-child(odd)');
-  for (var i = 0;i<odd.length;i++){
-    odd[i].style.backgroundColor = 'green';
-  }
+  // var li = document.querySelectorAll('li');
+  // li[1].style.color ='green';
+  // var odd = document.querySelectorAll('li:nth-child(odd)');
+  // for (var i = 0;i<odd.length;i++){
+  //   odd[i].style.backgroundColor = 'green';
+  // }
+  // traversing DOM
+  //parentNode
+var itemslist = document.querySelector('#items');
+// console.log(itemslist);
+// console.log(itemslist.parentNode.parentNode.parentNode);
+
+//parentElement
+// var itemslist = document.querySelector('#items');
+// console.log(itemslist);
+// itemslist.parentElement.style.backgroundColor = '#f4f4f4';
+// console.log(itemslist.parentElement.parentElement.parentElement);
+
+// //childnode
+// console.log(itemslist.childNodes);
+// console.log(itemslist.children);
+
+//firstchild
+// console.log(itemslist.firstChild);//dont use it because it will take the space from you.
+// console.log(itemslist.firstElementChild);
+// itemslist.firstElementChild.style.backgroundColor = 'yellow';
+
+//Last child
+// console.log(itemslist.lastChild);//dont use it because it will take the space from you.
+// console.log(itemslist.lastElementChild);
+// itemslist.lastElementChild.style.backgroundColor = 'yellow';
+// itemslist.lastElementChild.textContent = 'Hello 4';
+
+//nextSibling
+// console.log(itemslist.nextSibling);
+// console.log(itemslist.nextElementSibling);
+
+//previousSibling
+// console.log(itemslist.previousSibling);
+// console.log(itemslist.previousElementSibling);
+// itemslist.previousElementSibling.style.color = 'green';
+
+//create Element
+//Create div
+var newDiv = document.createElement('div');
+//add class
+newDiv.className = 'hi';
+//add id
+newDiv.id = 'name';
+//set attribute
+newDiv.setAttribute('title','Hello Div');
+//create textNode
+var newDivtext = document.createTextNode('Hello World');
+//Append text to Div
+newDiv.append(newDivtext);
+
+var container = document.querySelector('header .container');
+var h1 = document.querySelector('header h1');
+console.log(newDiv);
+container.insertBefore(newDiv, h1);
+
+var newDiv1 = document.createElement('div');
+//add class
+newDiv1.className = 'hi';
+//add id
+newDiv1.id = 'name';
+//set attribute
+newDiv1.setAttribute('title','Hello Div');
+//create textNode
+var newDiv1text = document.createTextNode('Hello World');
+//Append text to Div
+newDiv1.append(newDiv1text);
+var h2 = document.querySelector('.title');//where do you want to add the content
+var ul = document.querySelector('ul .list-group');//child node which determines the where the element is going to insert
+newDiv1.style.fontSize = '30px';
+console.log(newDiv1);
+h2.insertBefore(newDiv1, ul);
+
+
