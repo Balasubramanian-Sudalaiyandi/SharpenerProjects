@@ -66,38 +66,38 @@ var itemslist = document.querySelector('#items');
 
 //create Element
 //Create div
-var newDiv = document.createElement('div');
-//add class
-newDiv.className = 'hi';
-//add id
-newDiv.id = 'name';
-//set attribute
-newDiv.setAttribute('title','Hello Div');
-//create textNode
-var newDivtext = document.createTextNode('Hello World');
-//Append text to Div
-newDiv.append(newDivtext);
+// var newDiv = document.createElement('div');
+// //add class
+// newDiv.className = 'hi';
+// //add id
+// newDiv.id = 'name';
+// //set attribute
+// newDiv.setAttribute('title','Hello Div');
+// //create textNode
+// var newDivtext = document.createTextNode('Hello World');
+// //Append text to Div
+// newDiv.append(newDivtext);
 
-var container = document.querySelector('header .container');
-var h1 = document.querySelector('header h1');
-console.log(newDiv);
-container.insertBefore(newDiv, h1);
+// var container = document.querySelector('header .container');
+// var h1 = document.querySelector('header h1');
+// console.log(newDiv);
+// container.insertBefore(newDiv, h1);
 
-var newDiv1 = document.createElement('div');
-//add class
-newDiv1.className = 'hi';
-//add id
-newDiv1.id = 'name';
-//set attribute
-newDiv1.setAttribute('title','Hello Div');
-//create textNode
-var newDiv1text = document.createTextNode('Hello World');
-//Append text to Div
-newDiv1.append(newDiv1text);
-var h2 = document.querySelector('.title');//where do you want to add the content
-var ul = document.querySelector('ul .list-group');//child node which determines the where the element is going to insert
-newDiv1.style.fontSize = '30px';
-console.log(newDiv1);
-h2.insertBefore(newDiv1, ul);
+// var newDiv1 = document.createElement('div');
+// //add class
+// newDiv1.className = 'hi';
+// //add id
+// newDiv1.id = 'name';
+// //set attribute
+// newDiv1.setAttribute('title','Hello Div');
+// //create textNode
+// var newDiv1text = document.createTextNode('Hello World');
+// //Append text to Div
+// newDiv1.append(newDiv1text);
+// var h2 = document.querySelector('.title');//where do you want to add the content
+// var ul = document.querySelector('ul .list-group');//child node which determines the where the element is going to insert
+// newDiv1.style.fontSize = '30px';
+// console.log(newDiv1);
+// h2.insertBefore(newDiv1, ul);
 
 
