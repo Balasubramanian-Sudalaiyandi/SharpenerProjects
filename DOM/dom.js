@@ -103,9 +103,11 @@
 
 var form = document.getElementById('addForm');
 var itemlist = document.getElementById('items');
+var filter = document.getElementById('filter');
 
 form.addEventListener('submit', additems);
 itemlist.addEventListener('click', removeitem);
+filter.addEventListener('keyup',filteritems);
 function additems(e){
 e.preventDefault();
 var newItem = document.getElementById('item').value;
@@ -114,7 +116,7 @@ li.className = 'list-group-item';
 li.appendChild(document.createTextNode(newItem));
 
 var editBtn = document.createElement('button');
-editBtn.className = 'btn btn-sm float-right  delete'
+editBtn.className = 'btn btn-sm float-right'
 editBtn.appendChild(document.createTextNode('Edit'));
 editBtn.style.marginLeft = '10px';
 li.appendChild(editBtn);
@@ -136,4 +138,18 @@ function removeitem(e){
       itemlist.removeChild(li);
     }
   }
+}
+
+function filteritems(e){
+  var text = e.target.value.toLowerCase();
+  var items = itemlist.getElementsByTagName('li');
+  Array.from(items).forEach (function(item) {
+    var itemname = item.firstChild.textContent;
+    if(itemname.toLowerCase().indexOf(text) != -1){
+      item.style.display = 'block';
+    }
+    else {
+      item.style.display = 'none';
+    }
+  });
 }
