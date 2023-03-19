@@ -70,6 +70,7 @@
 // //add class
 // newDiv.className = 'hi';
 // //add id
+
 // newDiv.id = 'name';
 // //set attribute
 // newDiv.setAttribute('title','Hello Div');
@@ -145,10 +146,11 @@ function filteritems(e){
   var items = itemlist.getElementsByTagName('li');
   Array.from(items).forEach (function(item) {
     var itemname = item.firstChild.textContent;
-    if(itemname.toLowerCase().indexOf(text) != -1){
+    if(itemname.toLowerCase().i
+    indexOf(text) != -1){
       item.style.display = 'block';
     }
-    else {
+    else{
       item.style.display = 'none';
     }
   });

@@ -36,5 +36,5 @@ function Onsubmit(e){
         nameInput.value = '';
         emailInput.value = '';
     }
-
+localStorage.setItem('name',`${userlist.nameInput.value }`);
 }
