@@ -1,31 +1,31 @@
 <html>
     <body>
-        <!-- <form onsubmit="toLocalstorage(event)">
+       <form id="form">
             <label>Name</label>
             <input type="text" name="username" id="user"/>
             <label>E-mail</label>
             <input type="email" name="emailID" id="E-mail"/>
-            <button>Submit</button> -->
+            <button>Submit</button>
         </form>
         <script>
-            // function toLocalstorage(event){
-            //    event.preventDefault(    );
-            //     const name = document.getElementById('user').value;
-            //     const email = document.getElementById('E-mail').value;
-            //     console.log(name);
-            //     console.log(email);
-            //     localStorage.setItem('username', name);
-            //     localStorage.setItem('email', email);
-            // }
-            let myobj = {
-                name: 'Mani',
-                Age: 26
+            var form = document.getElementById('form');
+            form.addEventListener('submit', additem);
+            function additem(event){
+               event.preventDefault(    );
+               var li = document.createElement('li');
+               var text = document.getElementById('user').value;
+               var email = document.getElementById('E-mail').value;
+               li.appendChild(document.createTextNode(`${text} : ${email}`));
+
+               form.appendChild(li); 
+               console.log(form);
+               const obj = {
+                text,
+                email
+               }
+               localStorage.setItem(obj.text, JSON.stringify(obj))
             }
-            console.log(myobj);
-            let myobjserialised = JSON.stringify(myobj);
-            console.log(myobjserialised);
-            let myobjde = JSON.parse(myobjserialised);
-            console.log(myobjde);
+            
         </script>
     </body>
 </html>
