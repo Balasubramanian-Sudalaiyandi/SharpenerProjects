@@ -32,6 +32,15 @@
                 }
                 // deletebtn.className = 'delete';
                 li.appendChild(deletebtn);
+                var editbtn = document.createElement('input');
+                editbtn.type = "button";
+                editbtn.value = 'Edit';
+                editbtn.onclick = () => {
+                    localStorage.removeItem(obj.text,JSON.stringify(obj)); 
+                    var text = document.getElementById('user').value;
+                    var email = document.getElementById('E-mail').value;
+                }
+                li.appendChild(editbtn);
                form.appendChild(li); 
                console.log(form);
                const obj = {
