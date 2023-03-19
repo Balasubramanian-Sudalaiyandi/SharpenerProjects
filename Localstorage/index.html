@@ -6,17 +6,32 @@
             <label>E-mail</label>
             <input type="email" name="emailID" id="E-mail"/>
             <button>Submit</button>
+            <!-- <ul id="items" class="list-group">
+                <li class="list-group-item">Item 1<button class = 'delete'> Delete</button></li>
+            </ul> -->
         </form>
         <script>
             var form = document.getElementById('form');
+            // var item = document.getElementById('items');
             form.addEventListener('submit', additem);
+            // item.addEventListener('click', removeitem);
             function additem(event){
                event.preventDefault(    );
                var li = document.createElement('li');
+               li.className = 'list-group-item';
                var text = document.getElementById('user').value;
                var email = document.getElementById('E-mail').value;
                li.appendChild(document.createTextNode(`${text} : ${email}`));
-
+               
+               var deletebtn = document.createElement('input');
+               deletebtn.type = "button";
+               deletebtn.value = 'Delete'
+                deletebtn.onclick = () => {
+                    localStorage.removeItem(obj.text,JSON.stringify(obj));
+                    form.removeChild(li);
+                }
+                // deletebtn.className = 'delete';
+                li.appendChild(deletebtn);
                form.appendChild(li); 
                console.log(form);
                const obj = {
@@ -25,6 +40,8 @@
                }
                localStorage.setItem(obj.text, JSON.stringify(obj))
             }
+
+            
             
         </script>
     </body>
